@@ -20,9 +20,9 @@ init_core_rows
 set dx [get_db designs .bbox.dx]  ;# Get the design's X dimension (width)
 set dy [get_db designs .bbox.dy]  ;# Get the design's Y dimension (height)
 
-# REQUIRED: Macro Placement (Question 1)
+# REQUIRED: Macro Placement (Question 7-1)
 
-# REQUIRED: Macro Protection (Question 8)
+# REQUIRED: Macro Protection (Question 7-8)
 
 ## Add Power Grid
 # Source an external script to add a power grid to the design
