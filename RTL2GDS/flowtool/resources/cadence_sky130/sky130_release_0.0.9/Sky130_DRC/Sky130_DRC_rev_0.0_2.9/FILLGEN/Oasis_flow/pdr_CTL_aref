@@ -1,0 +1,35 @@
+#############################################################################
+#
+# Pegasus Design Review Control File
+#
+# this file will insert the poly_diff fill cell into the fill file
+#
+# Fill generation routine will create temporary cells containing diff fill
+# These cells must be replace with the poly_diff fill cell
+
+# CELLNAME.fill.oas  		- Oasis file with generated fill shapes
+# CELLNAME_FILL 		- top level cell name in fill oasis
+# REPLACE			- replaces cells "poly_diff_FILL" with "poly_diff_FILLCELL"
+# poly_diff_FILLCELL.oasis	- Oasis file containing the poly-diff fill cell
+
+# "CELLNAME" should be replaced with the user's top level cell name
+
+#############################################################################
+
+FILE CELLNAME.fill.oas
+PRIME CELLNAME_FILL
+ENDPLACES
+
+# Replace <cell_to_be_replaced> <cell_to_be_replace_with>
+REPLACE poly_diff_FILL poly_diff_FILLCELL 
+#
+# Cell Libraries...
+#
+FILE poly_diff_FILLCELL.oasis
+PRIME _NONE_
+ENDPLACES
+#
+
+ENDFILES
+
+#############################################################################

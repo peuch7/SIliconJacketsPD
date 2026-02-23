@@ -1,0 +1,44 @@
+#if ( $?LD_LIBRARY_PATH != 1 ) then
+#    setenv LD_LIBRARY_PATH ""
+#endif
+
+
+########################Cadence Tools###################
+
+source /tools/software/cadence/setup.csh
+source /tools/software/cadence/ic/cshrc.latest
+
+#DDI
+source /tools/software/cadence/ddi/cshrc.latest 
+#source /tools/software/cadence/genus/cshrc.latest
+
+#SSV
+source /tools/software/cadence/ssv/cshrc.latest
+
+#PVS
+#source /tools/software/cadence/pvs/cshrc.latest
+#source /tools/software/cadence/pegasus/cshrc.latest
+source /tools/software/cadence/quantus/cshrc.latest
+
+source /tools/software/cadence/xcelium/cshrc.latest
+source /tools/software/cadence/confrml/cshrc.latest
+
+########################################################
+
+
+
+
+########################Cadence's Hack###################
+
+unsetenv OA_HOME
+setenv OA_UNSUPPORTED_PLAT linux_rhel70_gcc93x
+
+#######################################################
+
+
+#########################Synopsys Tools################
+
+
+#source /tools/software/synopsys/setup.csh
+
+#######################################################

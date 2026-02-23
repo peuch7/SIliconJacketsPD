@@ -1,0 +1,119 @@
+//////////////////////////////////////////////////////////////////
+//	 Density rules			 			//
+// Version 0.0_2.9  June 25, 2025				//
+// 					  			//
+//////////////////////////////////////////////////////////////////
+
+// layers needed for density
+
+// sealid_hole already defined
+//   holes SEALID -inner -empty -outputlayer sealid_hole
+
+    or sealid_hole SEALID -outputlayer chip_plus_sealhole
+//    not ALL chip_plus_sealhole -outputlayer ALL_not_sealhole
+    or chip_plus_sealhole (select -interact -not ALL SEALID) -outputlayer fill_extent
+    not fill_extent SEALID -outputlayer fill_extent_not_SEALID
+
+
+// mask layers:  
+//  diff_mask (diff), poly_mask (poly), li_mask (LI)
+//  m1_mask m2_mask m3_mask m4_mask m5_mask
+// "diff_in" is diff dg, diff fill, tap dg
+
+OR diff_in diff_mask -outputlayer diff_layers
+OR poly_dg poly_fill poly_mask -outputlayer poly_layers
+OR li_dg   li_fill   li_mask   -outputlayer li_layers
+OR m1_dg   m1_fill   m1_mask   -outputlayer m1_layers
+OR m2_dg   m2_fill   m2_mask   -outputlayer m2_layers
+OR m3_dg   m3_fill   m3_mask   -outputlayer m3_layers
+OR m4_dg   m4_fill   m4_mask   -outputlayer m4_layers
+OR m5_dg   m5_fill   m5_mask   -outputlayer m5_layers
+
+
+// diff & poly have no global density requirements
+
+rule "diff.local.low" {
+	caption "CDR: Min diff local density (700 square um window, 70 um step): 28%"
+	density diff_layers -lt 0.28 -window 700 -step 70 -inside_of layer fill_extent_not_SEALID -rdb diff_low_density.rdb
+}
+rule "diff.local.high" {
+	caption "CDR: Max diff local density (700 square um window, 70 um stepp): 62%"
+	density diff_layers -gt 0.62 -window 700 -step 70 -inside_of layer fill_extent_not_SEALID -rdb diff_high_density.rdb
+}
+
+rule "poly.local.low" {
+	caption "CDR: Min poly local density (700 square um window, 70 um step): 8%"
+	density poly_layers -lt 0.08 -window 700 -step 70 -inside_of layer fill_extent_not_SEALID -rdb poly_low_density.rdb
+}
+rule "poly.local.high" {
+	caption "CDR: Max poly local density (700 square um window, 70 um step): 38%"
+	density poly_layers -gt 0.38 -window 700 -step 70 -inside_of layer fill_extent_not_SEALID -rdb poly_high_density.rdb
+}
+
+// LI has no local global density requirements
+
+rule "li.global.min" {
+	caption "CDR: Min global density of LI inside seal ring: 33%"
+	density li_layers -lt 0.33 -inside_of layer fill_extent_not_SEALID -rdb li_global_low.rdb
+}
+
+rule "li.global.max" {
+	caption "CDR: Max global density of LI inside seal ring: 62%"
+	density li_layers -gt 0.62 -inside_of layer fill_extent_not_SEALID -rdb li_global_high.rdb
+}
+
+// metal local density rules already in metal files (m1.pd.1, m2.pd.1, m3.pd.1, m4.pd.1)
+
+rule "m1.global.min" {
+	caption "CDR: Min global density of met1 inside seal ring: 33%"
+	density m1_layers -lt 0.33 -inside_of layer fill_extent_not_SEALID -rdb m1_global_low.rdb
+}
+
+rule "m1.global.max" {
+	caption "CDR: Max global density of met1 inside seal ring: 62%"
+	density m1_layers -gt 0.62 -inside_of layer fill_extent_not_SEALID -rdb m1_global_high.rdb
+}
+
+rule "m2.global.min" {
+	caption "CDR: Min global density of met2 inside seal ring: 33%"
+	density m2_layers -lt 0.33 -inside_of layer fill_extent_not_SEALID -rdb m2_global_low.rdb
+}
+
+rule "m2.global.max" {
+	caption "CDR: Max global density of met2 inside seal ring: 62%"
+	density m2_layers -gt 0.62 -inside_of layer fill_extent_not_SEALID -rdb m2_global_high.rdb
+}
+
+rule "m3.global.min" {
+	caption "CDR: Min global density of met3 inside seal ring: 33%"
+	density m3_layers -lt 0.33 -inside_of layer fill_extent_not_SEALID -rdb m3_global_low.rdb
+}
+
+rule "m3.global.max" {
+	caption "CDR: Max global density of met3 inside seal ring: 62%"
+	density m3_layers -gt 0.62 -inside_of layer fill_extent_not_SEALID -rdb m3_global_high.rdb
+}
+
+rule "m4.global.min" {
+	caption "CDR: Min global density of met4 inside seal ring: 33%"
+	density m4_layers -lt 0.33 -inside_of layer fill_extent_not_SEALID -rdb m4_global_low.rdb
+}
+
+rule "m4.global.max" {
+	caption "CDR: Max global density of met4 inside seal ring: 62%"
+	density m4_layers -gt 0.62 -inside_of layer fill_extent_not_SEALID -rdb m4_global_high.rdb
+}
+
+rule "m5.global.min" {
+	caption "CDR: Min global density of met5 inside seal ring: 43%"
+	density m5_layers -lt 0.33 -inside_of layer fill_extent_not_SEALID -rdb m5_global_low.rdb
+}
+
+rule "m5.global.max" {
+	caption "CDR: Max global density of met5 inside seal ring: 78%"
+	density m5_layers -gt 0.62 -inside_of layer fill_extent_not_SEALID -rdb m5_global_high.rdb
+}
+
+
+
+
