@@ -10,6 +10,28 @@ git clone https://github.gatech.edu/SiliconJackets/Physical-Design-Onboarding-S2
 
 2. Copy your verilog files into RTL2GDS/src/
 
+> IMPORTANT: The way the SRAM modules were instantiated in the Digital Design Onboarding isn't compatible with synthesis. Please follow the following steps:
+
+- Change both instantiations of the SRAM macro in your toplevel file from `CF_SRAM_1024x32_macro` to `CF_SRAM_1024x32`
+- Add the following declarations in your toplevel file:
+```
+supply1 VDD;
+supply0 VSS;
+```
+- Finally, replace your power ports:
+```
+ .TM         (VSS),
+        .SM         (VSS),
+        .WLBI       (VSS),
+        .WLOFF      (VSS),
+        .ScanInCC   (VSS),
+        .ScanInDL   (VSS),
+        .ScanInDR   (VSS),
+        .ScanOutCC  (),
+        .vpwrac     (VDD),
+        .vpwrpc     (VDD)
+```
+
 3. Navigate into the flowtool directory
 
 4. Specify the name of your toplevel verilog file on line 228 of `flowtool/scripts/setup.yaml`. This should be the name of your verilog file **without the .sv extension**.
