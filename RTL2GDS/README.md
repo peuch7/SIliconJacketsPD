@@ -8,7 +8,7 @@ To run:
 git clone https://github.gatech.edu/SiliconJackets/Physical-Design-Onboarding-S26.git
 ```
 
-2. Copy your verilog files into RTL2GDS/src/
+2. Copy your verilog files into `RTL2GDS/flowtool/src/`
 
 > IMPORTANT: The way the SRAM modules were instantiated in the Digital Design Onboarding isn't compatible with synthesis. Please follow the following steps:
 
