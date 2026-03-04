@@ -12,10 +12,10 @@ This document contains the following guides:
 >	**Note:** You _must_ be on an ECE Linux server. Otherwise, you will not have access to the Cadence tools required to run the flow.
 
 ```bash
-git clone https://github.gatech.edu/SiliconJackets/Physical-Design-Onboarding-Project.git
+git clone https://github.gatech.edu/SiliconJackets/Physical-Design-Onboarding-S26.git
 ```
 
-2. Change directory to the `design` directory by running `cd RTL2GDS/design`.
+2. Change directory to the `design` directory by running `cd RTL2GDS/flowtool`.
 
 3. Enter the C shell by running `tcsh`.
 
@@ -47,10 +47,10 @@ This is not true. -->
 
 Most flow parameters you'd want to edit are in:
 
-- `pipeline_src/base.sdc` (this is where you specify the clock period)
-- `design/setup.yaml` 
-- `design/flow.yaml` 
+- `flowtool/resources/sdc/top_level.sdc` (this is where you specify the clock period)
+- `flowtool/setup.yaml` 
+- `flowtool/flow.yaml` 
 
-For more granular control, you can edit the `.tcl` scripts in `design/scripts/`.
+For more granular control, you can edit the `.tcl` scripts in `flowtool/scripts/`.
 
 
