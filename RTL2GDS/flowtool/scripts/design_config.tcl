@@ -37,12 +37,18 @@ create_flow_step -name set_dont_use -owner design {
 # ../23_24_Core/src/RVCORE
 # }
 
-
 create_flow_step -name read_hdl -owner design {
   #
   # FIX ME!!!!
   #
-  set hdl_file_list [list] ; #fix this line by specifing the rtl. The rtl is located in ../src/. Don't specify the SRAM verilog files.
+  set hdl_file_list [ list    \
+    ../src/calculator_pkg.sv  \
+    ../src/top_lvl.sv         \
+    ../src/adder32.sv         \
+    ../src/controller.sv      \
+    ../src/full_adder.sv      \
+    ../src/result_buffer.sv   
+  ] ; #fix this line by specifing the rtl. The rtl is located in ../src/. Don't specify the SRAM verilog files.
   read_hdl -sv $hdl_file_list
   elaborate top_lvl
 }
