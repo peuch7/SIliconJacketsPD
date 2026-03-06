@@ -4,8 +4,12 @@ proc highlight_block {inst} {
 }
 
 proc highlight_path {path} {
-		# TODO: Complete this proc
-    puts "Fix me too"
+	if {[catch { gui_gtd_highlight_timing_report -path $path }]} {
+        report_timing -output_format binary > timing_report.btarpt
+        read_timing_debug_report timing_report.btarpt
+        gui_gtd_highlight_timing_report -path $path
+    }
+	gui_dim_foreground -light_level dark
 }
 
 proc dump_fanouts {} {
