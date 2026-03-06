@@ -229,7 +229,7 @@ init_floorplan_tcl:
 # 'design' related attributes
 #---------------------------------------------------------------------------------------------------
 # TODO: Specify the name of your toplevel cell
-design_name: <PLACEHOLDER>
+design_name: top_lvl
 
 # Boolean to run DRC
 enable_signoff_drc: true
