@@ -1,6 +1,6 @@
 proc highlight_block {inst} {
-		# TODO: Complete this proc
-    puts "Fix me"
+	gui_highlight $inst -auto_color
+	gui_dim_foreground -light_level dark
 }
 
 proc highlight_path {path} {
