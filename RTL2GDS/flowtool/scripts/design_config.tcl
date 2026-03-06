@@ -47,7 +47,7 @@ create_flow_step -name read_hdl -owner design {
     ../src/adder32.sv         \
     ../src/controller.sv      \
     ../src/full_adder.sv      \
-    ../src/result_buffer.sv   
+    ../src/result_buffer.sv   \
   ] ; #fix this line by specifing the rtl. The rtl is located in ../src/. Don't specify the SRAM verilog files.
   read_hdl -sv $hdl_file_list
   elaborate top_lvl
