@@ -1,0 +1,23 @@
+PythonSTA/template.py
+  25400513d9b774bf 2,6,8-9,11-12,16-17,19-57,59-61,63,65,67-72,74-81,83-86,88-138
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.1.8",
+  "base_commit_sha": "a5ef8d54782553f25e3ae5fdcfca9cc6a1d5e79a",
+  "prompts": {
+    "25400513d9b774bf": {
+      "agent_id": {
+        "tool": "github-copilot",
+        "id": "6cd6d04b-d430-4221-acb0-29d3408ef9b8",
+        "model": "unknown"
+      },
+      "human_author": "peuch <peu.chen7@gmail.com>",
+      "messages": [],
+      "total_additions": 127,
+      "total_deletions": 16,
+      "accepted_lines": 121,
+      "overriden_lines": 2
+    }
+  }
+}
