@@ -22,6 +22,9 @@ set dy [get_db designs .bbox.dy]  ;# Get the design's Y dimension (height)
 
 # REQUIRED: Macro Placement (Question 7-1)
 
+place_inst sram_A {100 100}
+place_inst sram_B {100 600}
+
 # REQUIRED: Macro Protection (Question 7-8)
 
 ## Add Power Grid
