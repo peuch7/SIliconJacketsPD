@@ -1,0 +1,36 @@
+RTL2GDS/flowtool/scripts/onboarding.tcl
+  445cdc3be3c00a4b 8
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.1.8",
+  "base_commit_sha": "8a6f3443f7427ae376ef517d991a7efc6f543bd4",
+  "prompts": {
+    "25400513d9b774bf": {
+      "agent_id": {
+        "tool": "github-copilot",
+        "id": "6cd6d04b-d430-4221-acb0-29d3408ef9b8",
+        "model": "copilot/auto"
+      },
+      "human_author": "peuch <peu.chen7@gmail.com>",
+      "messages": [],
+      "total_additions": 6,
+      "total_deletions": 3,
+      "accepted_lines": 0,
+      "overriden_lines": 0
+    },
+    "445cdc3be3c00a4b": {
+      "agent_id": {
+        "tool": "github-copilot",
+        "id": "30a0f497-82ec-49af-b047-7f90261e2630",
+        "model": "copilot/auto"
+      },
+      "human_author": "peuch <peu.chen7@gmail.com>",
+      "messages": [],
+      "total_additions": 1,
+      "total_deletions": 1,
+      "accepted_lines": 1,
+      "overriden_lines": 0
+    }
+  }
+}
