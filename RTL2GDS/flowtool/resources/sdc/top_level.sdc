@@ -2,7 +2,7 @@
 set_units -time ns
 
 # Define the clock period in nanoseconds
-set CLOCK_PERIOD 3.765 ;# Clock period is set to 3.765 ns
+set CLOCK_PERIOD 3.85 ;# Clock period is set to 3.85 ns
 
 # Set the constraint mode to "func" (functional mode)
 set_interactive_constraint_modes {func}

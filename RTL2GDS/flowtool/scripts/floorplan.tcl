@@ -27,8 +27,8 @@ place_inst sram_B {100 600}
 
 # REQUIRED: Macro Protection (Question 7-8)
 
-create_route_halo -inst sram_A -space 2.0 -top_layer met3
-create_route_halo -inst sram_B -space 2.0 -top_layer met3
+create_route_halo -inst sram_A -space 2.0 -bottom_layer met1 -top_layer met3
+create_route_halo -inst sram_B -space 2.0 -bottom_layer met1 -top_layer met3
 
 ## Add Power Grid
 # Source an external script to add a power grid to the design
