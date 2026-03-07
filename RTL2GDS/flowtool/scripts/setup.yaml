@@ -353,7 +353,7 @@ cts_target_max_transition_time:
 # The names of top and bottom metal layers to use for global and detail routing.
 routing_layers:
   top: met5
-  bottom: met2
+  bottom: met1 # Maybe here?
 
 # The base_cell name to use for antenna violation fixing.
 route_design_antenna_cell_name: ANTENNA
