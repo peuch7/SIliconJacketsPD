@@ -22,13 +22,19 @@ set dy [get_db designs .bbox.dy]  ;# Get the design's Y dimension (height)
 
 # REQUIRED: Macro Placement (Question 7-1)
 
-place_inst sram_A {100 100}
-place_inst sram_B {100 600}
+place_inst sram_A {75 625}
+place_inst sram_B {575 625}
 
 # REQUIRED: Macro Protection (Question 7-8)
 
-create_route_halo -inst sram_A -space 2.0 -bottom_layer met1 -top_layer met3
-create_route_halo -inst sram_B -space 2.0 -bottom_layer met1 -top_layer met3
+create_route_halo -inst sram_A -space 10.0 -bottom_layer met2 -top_layer met3
+create_route_halo -inst sram_B -space 10.0 -bottom_layer met2 -top_layer met3
+
+create_place_halo -inst sram_A -halo_delta 15 15 15 15
+create_place_halo -inst sram_B -halo_delta 15 15 15 15
+
+create_route_blockage -layers {met2 met3} -inst sram_A -cover
+create_route_blockage -layers {met2 met3} -inst sram_B -cover
 
 ## Add Power Grid
 # Source an external script to add a power grid to the design
